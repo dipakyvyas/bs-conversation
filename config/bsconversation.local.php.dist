@@ -1,0 +1,57 @@
+<?php
+return [
+    'bsconversation' => [
+        'mapper' => [
+        	'conversation_class' => '',
+        	'message_class' => '',
+        ],
+        'transport' => [
+        	'smtp' => [
+        		'delivery_entity' => 'BsConversation\Model\Mapper\ODM\Document\SMTPDelivery',
+        		'options' => [
+        			'name'              => 'localhost.localdomain',
+				    'host'              => '127.0.0.1',
+				    'port'              => 587, // Notice port change for TLS is 587
+				    'connection_class'  => 'plain',
+				    'connection_config' => [
+				        'username' => 'user',
+				        'password' => 'pass',
+				        'ssl'      => 'tls',
+				    ],
+        		],
+        		'defaults' => [
+        			'replyto' => '',
+        			'from' => ''
+        		]
+        	]
+        ],
+        'options'=>[
+        	'unsubscribe_link' => true,
+        	'include_reply_line' =>true,
+        	'footer' => '',
+            'unsubscribe_redirection_url' => '',
+            'subject_include_conversation_id' => true
+        ]
+
+    ],
+
+    'validators' => [
+        'factories' => [
+
+        ],
+        'invokables' => [
+
+        ]
+    ]
+    ,
+    'service_manager' => [
+        'aliases' => [
+        ],
+        'factories' => [
+                       'bsconversation_mapper' => 'BsConversation\\Model\\Mapper\\ODM\\Factory\\MapperFactory'
+        ],
+        'invokables' => [
+
+        ],
+    ]
+];

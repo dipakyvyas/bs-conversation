@@ -1,0 +1,29 @@
+{
+    "name": "broadshout/bs-conversation",
+    "repositories" : [
+    {
+	    "type" : "composer",
+	    "url" : "https://packagist.org/"
+	},
+	{
+		"type" : "git",
+	    "url" : "https://github.com/broadshout/bs-base.git"
+	},
+	{
+		"type" : "git",
+	    "url" : "https://github.com/broadshout/bs-file.git"
+	}
+   ],
+    "require": {
+    	"broadshout/bs-base" : "~3.0",
+    	"broadshout/bs-file" : "~3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "BsConversation\\": "src/"
+        },
+        "classmap": [
+            "./Module.php"
+        ]
+    }
+}
